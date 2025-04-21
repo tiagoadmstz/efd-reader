@@ -6,13 +6,24 @@ plugins {
     alias (libs.plugins.gitSemverPlugin)
 }
 
+group 'io.github.tiagoadmstz'
+version semver
+compileJava.options.encoding = 'UTF-8'
+description = 'Transformação de arquivos EFD ICMS IPI para o formato CSV'
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
+semver {
+    releaseTagNameFormat = "v%s"
+    createReleaseCommit = false
+}
+
 repositories {
+    gradlePluginPortal()
     mavenCentral()
 }
 
