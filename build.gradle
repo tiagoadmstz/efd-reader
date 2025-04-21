@@ -6,8 +6,8 @@ plugins {
     alias (libs.plugins.gitSemverPlugin)
 }
 
-group 'io.github.tiagoadmstz'
-version semver
+group = 'io.github.tiagoadmstz'
+version = semver
 compileJava.options.encoding = 'UTF-8'
 description = 'Transformação de arquivos EFD ICMS IPI para o formato CSV'
 
