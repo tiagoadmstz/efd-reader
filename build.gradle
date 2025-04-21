@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'maven-publish'
+    alias (libs.plugins.lombokPlugin)
+    alias (libs.plugins.gitSemverPlugin)
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+
+    implementation libs.guava
+    implementation libs.guice
+
+    implementation libs.apacheCommonsLang
+    implementation libs.apacheCommonsIo
+    implementation libs.apachePoi
+    implementation libs.apachePoiOoXml
+    implementation libs.apachePoiOoXmlFull
+    implementation libs.jacksonCore
+    implementation libs.jacksonDatabind
+    implementation libs.jacksonAnnotations
+    implementation libs.reflections
+
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

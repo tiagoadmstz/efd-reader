@@ -1,0 +1,36 @@
+[versions]
+apachePoiVersion = "5.3.0"
+guavaVersion = "33.2.1-jre"
+guiceVersion = "7.0.0"
+jacksonVersion = "2.18.1"
+junit-jupiter = "5.10.3"
+lombokVersion = "1.18.38"
+lombokPluginVersion = "8.4"
+apacheCommonsIoVersion = "2.18.0"
+apacheCommonsLangVersion = "3.17.0"
+semverVersion = "0.16.0"
+reflectionsVersion = "0.10.2"
+
+[libraries]
+apacheCommonsIo = { module = "commons-io:commons-io", version.ref = "apacheCommonsIoVersion" }
+apacheCommonsLang = { module = "org.apache.commons:commons-lang3", version.ref = "apacheCommonsLangVersion" }
+apachePoi = { module = "org.apache.poi:poi", version.ref = "apachePoiVersion"}
+apachePoiOoXml = { module = "org.apache.poi:poi-ooxml", version.ref = "apachePoiVersion" }
+apachePoiOoXmlFull = { module = "org.apache.poi:poi-ooxml-full", version.ref = "apachePoiVersion" }
+
+guava = { module = "com.google.guava:guava", version.ref = "guavaVersion" }
+guice = { module = "com.google.inject:guice", version.ref = "guiceVersion" }
+
+jacksonCore = { module = "com.fasterxml.jackson.core:jackson-core", version.ref = "jacksonVersion" }
+jacksonDatabind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jacksonVersion" }
+jacksonAnnotations = { module = "com.fasterxml.jackson.core:jackson-annotations", version.ref = "jacksonVersion" }
+
+reflections = { module = "org.reflections:reflections", version.ref = "reflectionsVersion" }
+
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombokVersion" }
+
+[plugins]
+lombokPlugin = { id = "io.freefair.lombok", version.ref = "lombokPluginVersion" }
+gitSemverPlugin = { id = "com.github.jmongard.git-semver-plugin", version.ref = "semverVersion" }
